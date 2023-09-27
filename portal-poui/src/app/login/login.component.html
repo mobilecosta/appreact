@@ -1,0 +1,11 @@
+<po-page-login
+  (p-login-submit)="loginSubmit($event)"
+  [p-recovery]="passwordRecovery"
+  p-logo="assets/bg-removed.png"
+  p-secondary-logo="assets/bg-removed.png"
+  [p-literals]="customLiterals"
+>
+</po-page-login>
+<router-outlet></router-outlet>
+
+<po-loading-overlay [hidden]="hideload"></po-loading-overlay>

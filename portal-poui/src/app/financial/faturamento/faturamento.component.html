@@ -1,0 +1,22 @@
+
+<po-page-dynamic-table
+  [p-auto-router]='true'
+  [p-concat-filters]='true'
+  [p-keep-filters]='true'
+  p-title="Faturamento"
+  [p-breadcrumb]="breadcrumb"
+  [p-table-custom-actions]="tableCustomActions"
+  [p-quick-search-width]="quickSearchWidth"
+  [p-service-api]="serviceApi"
+  [p-load]="onLoad.bind(this)"
+></po-page-dynamic-table>
+<po-modal #userDetailModal p-size="lg" p-title="Rastreio">
+      <po-textarea
+        [p-disabled]="true" 
+        [(ngModel)]="rastro" 
+        name="rastro" 
+        [p-rows]="20"
+      >
+    </po-textarea>
+</po-modal>
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+<po-page-dynamic-table
+  [p-auto-router]='true'
+  [p-concat-filters]='true'
+  [p-keep-filters]='true'
+  p-title="Comissões"
+  [p-breadcrumb]="breadcrumb"
+  [p-table-custom-actions]="tableCustomActions"
+  [p-service-api]="serviceApi"
+  [p-load]="onLoad.bind(this)"
+[p-quick-search-width]="quickSearchWidth"
+>
+</po-page-dynamic-table>
+
+<po-modal #userDetailModal p-size="lg" p-title="Detalhes da Comissão">
+  <po-dynamic-view [p-fields]="detailFields" [p-value]="detailedUser"> </po-dynamic-view>
+</po-modal>
+<router-outlet></router-outlet>

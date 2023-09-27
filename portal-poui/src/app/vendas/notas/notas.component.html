@@ -1,0 +1,19 @@
+<po-page-dynamic-table
+  [p-auto-router]='true'
+  [p-concat-filters]='true'
+  [p-keep-filters]='true'
+  p-title="Notas"
+  [p-breadcrumb]="breadcrumb"
+  [p-service-api]="serviceApi"
+  [p-load]="onLoad.bind(this)"
+></po-page-dynamic-table>
+
+<po-modal #userDetailModal p-size='lg' p-title="Detalhes da Nota">
+
+<po-table
+[p-items]="pedidoitems"
+[p-sort]="true"
+[p-striped]="true"
+></po-table>
+</po-modal>
+<router-outlet></router-outlet>

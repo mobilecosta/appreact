@@ -1,0 +1,9 @@
+yarn android
+
+https://medium.com/@alifyandra/building-an-expo-app-3bef728464ef
+
+https://docs.expo.dev/tutorial/create-your-first-app/
+
+https://blog.expo.dev/the-new-expo-cli-f4250d8e3421
+
+https://github.com/expo/create-react-native-app

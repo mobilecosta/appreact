@@ -1,0 +1,23 @@
+
+<div class="po-wrapper">
+  <div [class.cliente]="!vendedor" [class.vendedor]="vendedor">
+
+    <po-page-default [p-title]="user">
+      <div class="po-row">
+
+        <po-widget *ngFor="let m of mural"
+        class="po-sm-12 po-md-4 po-lg-4"
+        [p-height]="250"
+        p-title="Data: {{m.data_publicacao}}"
+        >
+        <po-info p-label='Assunto: {{m.assunto}}' p-value="{{m.conteudo}}"> </po-info>
+      </po-widget>
+    </div>
+
+
+
+
+      <router-outlet></router-outlet>
+    </po-page-default>
+  </div>
+</div>

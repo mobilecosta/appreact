@@ -1,0 +1,84 @@
+<div>
+  <po-loading-overlay [hidden]="hideload"></po-loading-overlay>
+
+  <po-page-default p-title="Garantia" [p-actions]="actions" [p-breadcrumb]="breadcrumb">
+    <div style="margin-top: 20px;">
+      <po-table
+        [p-auto-collapse]="true"
+        [p-columns]="columnsTable"
+        [p-hide-columns-manager]="true"
+        [p-items]="itemsTable"
+        [p-sort]="true"
+        [p-actions]="tableCustomActions"
+      >
+      </po-table>
+    </div>
+
+      <po-modal #poModal p-title="Detalhes do Chamado">
+          <po-dynamic-view [p-fields]="fields" [p-value]="employee"></po-dynamic-view>
+          
+          <div class="mt-15">
+              <po-textarea
+                  [p-disabled]="true" 
+                  [(ngModel)]="obsatendente" 
+                  name="obsatendente" 
+                  p-label="Histórico de atendimento">
+              </po-textarea>
+
+              <po-textarea 
+                  [p-disabled]="false" 
+                  [(ngModel)]="obscliente" 
+                  name="obscliente" 
+                  p-label="Interagir com atendente">
+              </po-textarea>
+          </div>
+
+          <form class="mt-15" enctype="multipart/data">
+              <div class="btnSelec">
+                <label for="file">Enviar outras imagens</label>
+              </div>
+              <div class="list">
+                <ul><div [innerHTML]="inputImg"></div></ul>
+                <po-button class="mt-15" *ngIf="!!inputImg" p-label='Limpar Imagens' (p-click)="clearImg()"></po-button>
+              </div>
+              
+              <input type="file" id="file" accept="image/*" hidden multiple (change)="onSelectNewFile($any($event.target).files)">
+          </form>
+
+          <po-modal-footer>
+              <po-button p-label="Fechar" (p-click)="poModal.close()"></po-button>
+              <po-button [p-disable]="!obscliente" p-label="Interagir" p-kind="primary" (p-click)="interageCliente()"></po-button>
+            </po-modal-footer>
+      </po-modal>
+
+  </po-page-default>
+
+  <po-modal #userDetailProduto p-title="Detalhes da Nota">
+    <po-dynamic-view p-size="lg" [p-fields]="detailFields" [p-value]="detailedProduto"> </po-dynamic-view>
+  </po-modal>
+</div>
+
+<style>
+
+    .badge1 {
+      padding: 3px 10px;
+      border-radius: 3px;
+      color: #fff;
+      width: 100px;
+      text-align: center;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      font-size: 10px;
+    }
+
+    .badge1.component {
+      background-color: #82b1ff;
+    }
+
+    .badge1.service {
+      background-color: #b39ddb;
+    }
+
+    .badge1.template {
+      background-color: #ffb515;
+    }
+</style>

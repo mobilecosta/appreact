@@ -1,0 +1,23 @@
+.btnSelec{
+    padding: 5px;
+    display: flex;
+    width: 200px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #0c9abe;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.list{
+    margin: 5px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+.mt-15{
+    margin-top: 15px
+}

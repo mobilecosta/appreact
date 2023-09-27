@@ -1,0 +1,76 @@
+<div class="po-wrapper">
+    <div [class.cliente]="!vendedor" [class.vendedor]="vendedor">
+        <po-menu [p-menus]="menus">
+            <div *p-menu-header-template class="po-p-2 po-font-title sample-menu-header-text-color">
+                <img width="200" src="assets/bg-removed.png" />
+            </div>
+        </po-menu>
+
+        <po-page-default [p-title]="user">
+            <div *ngIf="vendedor">
+                <div class="po-row">
+                    <div class="po-md-12">
+                        <po-chart class="po-md-6 po-mt-2" p-title="Metas Mensais" [p-options]="mensalOptions" [p-categories]="mensalCategories" [p-series]="mensalSeries">
+                        </po-chart>
+
+                        <po-chart class="po-md-6 po-mt-2" p-title="Metas Trimestral" [p-options]="quadrimensalOptions" [p-categories]="quadrimensalCategories" [p-series]="quadrimensalSeries">
+
+                        </po-chart>
+                    </div>
+
+                    <po-widget class="po-lg-3 po-mt-2" p-primary-label="Details" p-title="Pedidos em Análise" (p-primary-action)="openTitulos()">
+                        <div class="po-font-subtitle po-text-center">
+                            {{ graphPedidosAnalise }}
+                        </div>
+                    </po-widget>
+
+                    <po-widget class="po-lg-3 po-mt-2" p-primary-label="Details" p-title="Pedidos no Mês">
+                        <div class="po-font-subtitle po-text-center"> {{ graphPedidosMes }}</div>
+                    </po-widget>
+
+                    <po-widget class="po-lg-3 po-mt-2" p-primary-label="Details" p-title="Titulos em Aberto">
+                        <div class="po-font-subtitle po-text-center">{{ graphTitulosAberto }}</div>
+                    </po-widget>
+                    <po-widget class="po-lg-3 po-mt-2" p-primary-label="Details" p-title="Total de comissões">
+                        <div class="po-font-subtitle po-text-center"> {{graphComissoes}} </div>
+                    </po-widget>
+                </div>
+            </div>
+
+            <div *ngIf="!vendedor">
+                <div class="po-row">
+
+                    <po-widget *ngFor="let m of mural" class="po-sm-12 po-md-4 po-lg-4" [p-height]="250" p-title="Data: {{m.data_publicacao}}">
+                        <po-info p-label='Assunto: {{m.assunto}}' p-value="{{m.conteudo}}"> </po-info>
+                    </po-widget>
+
+
+                    <po-widget #Card class='po-widget' *ngFor="let marca of marcas" class="po-sm-12 po-md-4 po-lg-4" [p-height]="250" p-title="Marcas" p-primary-label="Visite Web site" p-secondary-label="Ver propaganda" (p-primary-action)="visiteWebsite(marca.website)" (p-secondary-action)="modal.open()">
+                        <po-avatar class="po-md-4" p-size="lg" (p-click)="image.open()" p-src={{marca.avatar}}> </po-avatar>
+
+                        <div class="po-md-8">
+                            <p><strong>Name:</strong> {{marca.name}} </p>
+                            <p><strong>Descrição:</strong> {{marca.description}}</p>
+                        </div>
+
+                        <po-modal p-size="auto" #modal p-title="Propaganda">
+                            <video width='1020' height='800' controls>
+              <source type="video/mp4" src={{marca.midia}}>
+            </video>
+                        </po-modal>
+
+                        <po-modal p-size="lg" #image p-title={{marca.name}}>
+                            <img width='1020' height='800' alt={{marca.name}} src={{marca.avatar}} class="sample-center-image" />
+                        </po-modal>
+                    </po-widget>
+
+
+
+                </div>
+
+            </div>
+
+            <router-outlet></router-outlet>
+        </po-page-default>
+    </div>
+</div>

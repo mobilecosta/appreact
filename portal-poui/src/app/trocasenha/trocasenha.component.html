@@ -1,0 +1,10 @@
+<po-page-change-password
+  [p-hide-current-password]="hideCurrentPassword"
+  [p-recovery]="recovery"
+  [p-requirements]="requirements"
+  [p-url-back]="urlBack"
+  [p-url-home]="urlHome"
+  (p-submit)="submit($event)"
+></po-page-change-password>
+
+<po-loading-overlay [hidden]="hideload"></po-loading-overlay>
