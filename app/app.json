@@ -18,21 +18,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "n"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.felipemayer00.RobsolApp"
+      "package": "com.felipemayer.robsolapp"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "915ed072-6612-4365-bed1-abd16ff36920"
+        "projectId": "90fca2a4-f38a-47a3-a1cf-62ea5af1577b"
       }
     }
   }

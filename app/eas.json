@@ -24,6 +24,11 @@
         "gradleCommand": ":app:assembleRelease"
       }
     },
+    "preview2": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
     "production": {
       "ios": {
         "resourceClass": "m1-medium"
