@@ -704,8 +704,9 @@ IF FWJsonDeserialize(cBody,@oJsonIM)
 		aCliente	:=	oBody:getJsonText("CLIENTE")
 		//AttIsMemberOf(AARRAY[nCont]:PEDIDO,"NOTA")
 
-		StatPed(oBody,@aRetExec, @aErro,@aCliente,@aItens,@cUser,@cCondPg)
+		// StatPed(oBody,@aRetExec, @aErro,@aCliente,@aItens,@cUser,@cCondPg)
 		//conout(cUser)
+		conout(aErro)
 		cCode 	:= aRetExec[1]
 		cCodUsu := aRetExec[2]
 		cPrdSld := aRetExec[3]

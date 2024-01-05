@@ -42,13 +42,13 @@ Descricao: 	Serviço Rest contendo o Metodo POST do evento de
 WsMethod GET WsReceive NOTICIA WsService Mural
 
 	
-	Local cNoticia 	:= Self:NOTICIA
+	// Local cNoticia 	:= Self:NOTICIA
 	Local aArea		:= GetArea()
 	Local nCont		:= 0
 	Local cVirg		:= ""
 	Local aAux		:= {}
-    Local cPage     := '1'
-    Local cPathc    := '' 
+    // Local cPage     := '1'
+    // Local cPathc    := '' 
 
 
 	lRet					:= .T.

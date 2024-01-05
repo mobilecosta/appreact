@@ -42,7 +42,7 @@ Descricao: 	Serviço Rest contendo o Metodo POST do evento de
 WsMethod GET WsReceive CLIENTE WsService Catalogs
 
 	
-	Local cCliente 	:= Self:CLIENTE
+	// Local cCliente 	:= Self:CLIENTE
 	Local aArea		:= GetArea()
 	Local nCont		:= 0
 	Local cVirg		:= ""

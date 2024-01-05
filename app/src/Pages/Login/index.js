@@ -41,7 +41,7 @@ export default function Login({navigation}){
         setLoad(true)
 
         for (var i = 0; i < 5; i++) {
-            console.log('tentativa de logar: '+i);
+            console.log('tentativa de logar 8: '+i);
             result = await loadUser()
             
             if(result.retorno){
