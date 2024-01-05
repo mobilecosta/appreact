@@ -169,7 +169,7 @@ Static Function cria_pn3()
 	Local lRet      As Logical
 	Local aAux      As Array
 	Local aCpoRef	As Array
-	Local nCont 	As Numeric
+	// Local nCont 	As Numeric
 	
 	Private aDados    As Array
 	

@@ -8,7 +8,7 @@
 /*/{Protheus.doc} PRTL001
 Descricao: Servico API Rest Evento Usuarios
 
-@author Alexandre Ven�ncio
+@author Alexandre Ven�ncio
 @since 21/09/2021
 @version 1.0
 
@@ -105,7 +105,7 @@ WsMethod POST WsReceive RECEIVE WsService PRTL001
 			cMessage	:= "Campos Obrigatorios de Preenchimento nao informados: SENHA"
 			lRet		:= .T.
 		Else
-			RPCSetType(3)  
+			// RPCSetType(3)  
 			RpcSetEnv(cEmp,cFil,,,,GetEnvServer(),{ }) 
 		EndIf
 
@@ -121,12 +121,12 @@ WsMethod POST WsReceive RECEIVE WsService PRTL001
 				cCode		:= aRetExec[2]
 				cCodUsu		:= aRetExec[3]
 				cNomUsu		:= aRetExec[4]
-				cCodVnd		:= aRetExec[5]
-				cAcesso		:= aRetExec[6]
-				cCodClt		:= aRetExec[7]
-				cLojCli		:= aRetExec[8]
-				cDtUltBn	:= aRetExec[9]
-				cFlagBn		:= aRetExec[10]
+				cCodVnd		:= ''
+				cAcesso		:= ''
+				cCodClt		:= ''
+				cLojCli		:= ''
+				cDtUltBn	:= ''
+				cFlagBn		:= ''
 				
 			Else
 				// Mostra o Erro no Retorno do Processamento.
@@ -181,7 +181,7 @@ Static Function StatReq(cCode As Character, cCodUsu As Character, cNomUsu As Cha
 	Local oJsonRet 	As J
 
 	Default cCode		:= ''
-	Default cMessage	:= ''
+	Default cMessage	:= '' 
 
 	//Cria o Objeto de Retono da Requisição.
 	oJsonRet  := JsonObject():New()
@@ -242,13 +242,13 @@ Static Function RetUser(oBody As J, aRetExec as Array, aErro As Array, cUser As 
 		EndIf
 
 		If lRet
-			DbSelectArea("AI4")
-			DbSetOrder(1)
-			DbSeek(xFilial("AI4")+AI3->AI3_CODUSU)
+			// DbSelectArea("AI4")
+			// DbSetOrder(1)
+			// DbSeek(xFilial("AI4")+AI3->AI3_CODUSU)
 
-			If Empty(AI3->AI3_ULTBEN) .Or. SubStr(DToS(AI3->AI3_ULTBEN),5,2) != SubStr(DToS(Date()),5,2)
-				cBenef := 'S'
-			EndIf
+			// If Empty(AI3->AI3_ULTBEN) .Or. SubStr(DToS(AI3->AI3_ULTBEN),5,2) != SubStr(DToS(Date()),5,2)
+			// 	cBenef := 'S'
+			// EndIf
 
 			aRetExec := {;
 					.T.,;
@@ -256,10 +256,10 @@ Static Function RetUser(oBody As J, aRetExec as Array, aErro As Array, cUser As 
 					AI3->AI3_CODUSU,;
 					Alltrim(AI3->AI3_NOME),;
 					AI3->AI3_VEND,;
-					AI3->AI3_XACESS,;
-					AI4->AI4_CODCLI,;
-					AI4->AI4_LOJCLI,;
-					DToS(AI3->AI3_ULTBEN),;
+					"",;
+					"",;
+					"",;
+					"",;
 					cBenef;
 				}
 		EndIf

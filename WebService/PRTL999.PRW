@@ -45,7 +45,7 @@ WsMethod POST WsReceive RECEIVE WsService ApiTotvsTeste
 
 	Local aArea		:= GetArea()
 	Local cJson		:= ''
-	Local oJsonIM
+	// Local oJsonIM
 	Local cBody
     Local cCode
     Local cloja

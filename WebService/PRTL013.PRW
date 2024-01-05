@@ -42,7 +42,7 @@ Descricao: 	Servico Rest contendo o Metodo POST do evento de
 WsMethod GET WsReceive VENDEDOR WsService CondPgto
 
 	
-	Local cVENDEDOR := Self:VENDEDOR
+	// Local cVENDEDOR := Self:VENDEDOR
 	Local aArea		:= GetArea()
 	Local nCont		:= 0
 	Local cVirg		:= ""
